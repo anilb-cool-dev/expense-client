@@ -23,3 +23,16 @@ Where are environment variables persisted in?
 /home/ec2-user/.bash_profile
 
 =========================================
+
+How to swith to get root access?
+
+sudo su
+
+=========================================
+
+How to deploy/undeploy?
+
+mvn tomcat7:deploy
+mvn tomcat7:undeploy
+
+=========================================
