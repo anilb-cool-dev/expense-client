@@ -6,6 +6,7 @@ http://localhost:8081/expense/expense
 
 where is the tomcat folder?
 
+/etc/tomcat7
 /usr/share/tomcat7
 
 ==========================================
