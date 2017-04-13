@@ -11,6 +11,13 @@ where is the tomcat folder?
 
 ==========================================
 
+How to restart tomcat7
+
+tomcat7 stop
+tomcat7 start
+
+==========================================
+
 What should be in tomcat-users.xml?
 
 	<role rolename="manager-gui"/>
