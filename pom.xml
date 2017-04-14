@@ -18,6 +18,8 @@
 					<url>http://localhost:8080/manager/text</url>
 					<server>mytomcat</server>
 					<path>/expense</path>
+					<username>tomcat</username>
+					<password>s3cret</password>
 				</configuration>
 			</plugin>
 		</plugins>
