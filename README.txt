@@ -3,14 +3,14 @@ How to install and uninstall tomcat7?
 sudo yum install tomcat7-webapps tomcat7-docs-webapp tomcat7-admin-webapps
 sudo yum remove tomcat7
 
-=========================================
+===========================================
 
 What is the URL?
 
 http://localhost:8080/expense/JSP/ReportsList.jsp
 http://localhost:8081/expense/expense
 
-==========================================
+============================================
 
 where is the tomcat folder?
 
