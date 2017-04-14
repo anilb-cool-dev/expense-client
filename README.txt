@@ -7,6 +7,7 @@ sudo yum remove tomcat7
 
 What is the URL?
 
+http://localhost:8080/expense/JSP/ReportsList.jsp
 http://localhost:8081/expense/expense
 
 ==========================================
