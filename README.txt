@@ -8,6 +8,7 @@ sudo yum remove tomcat7
 How to install docker?
 
 sudo yum install -y docker
+http://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
 
 ===========================================
 
