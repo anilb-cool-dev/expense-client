@@ -23,17 +23,6 @@
 		</plugins>
 	</build>
 
-  <repositories>
-	<repository>
-		<id>central</id>
-		<name>Internal Mirror of Central Respository</name>
-		<url>http://auto-util2.concur.concurtech.org:8081/artifactory/repo</url>
-		<snapshots>
-			<enabled>false</enabled>
-		</snapshots>
-	</repository>
-  </repositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
