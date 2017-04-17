@@ -71,3 +71,5 @@ A great resource is at http://trimc-devops.blogspot.com/2015/03/running-docker-a
 Basic useful commands
 $docker build -t anilbhagwat/tomcat .
 $docker run -p 8080:8080 anilbhagwat/tomcat
+$docker login
+$docker push anilbhagwat/tomcat
