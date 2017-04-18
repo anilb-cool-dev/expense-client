@@ -75,4 +75,10 @@ $docker login
 $docker push anilbhagwat/expense-client
 $docker pull anilbhagwat/expense-client
 
+=========================================
 
+How do I check IP addr of my VM?
+
+/sbin/ifconfig
+
+=========================================
