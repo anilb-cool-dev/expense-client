@@ -69,7 +69,10 @@ Dockerization
 
 A great resource is at http://trimc-devops.blogspot.com/2015/03/running-docker-applications-apache.html
 Basic useful commands
-$docker build -t anilbhagwat/tomcat .
-$docker run -p 8080:8080 anilbhagwat/tomcat
+$docker build -t anilbhagwat/expense-client .
+$docker run -p 8080:8080 anilbhagwat/expense-client
 $docker login
-$docker push anilbhagwat/tomcat
+$docker push anilbhagwat/expense-client
+$docker pull anilbhagwat/expense-client
+
+
