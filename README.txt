@@ -1,4 +1,9 @@
+How to remember git credentials?
 
+git config credential-helper store
+The creds are  stored in .git-credentials
+
+=========================================
 
 How to install and uninstall tomcat7?
 
