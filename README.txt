@@ -1,4 +1,5 @@
 
+
 How to install and uninstall tomcat7?
 
 sudo yum install tomcat7-webapps tomcat7-docs-webapp tomcat7-admin-webapps
