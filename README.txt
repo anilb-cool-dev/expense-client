@@ -1,3 +1,28 @@
+How do I install git?
+
+sudo yum install git
+
+=========================================
+
+How do I transfer a file from local windows to my linux instance in AWS?
+
+Use pscp that comes with putty.
+C:\>pscp -i "C:\Users\anilb\Desktop\Tech\AWS Keys\MyLinuxBuildEnv.ppk" c:\apache-maven-3.5.0-bin.tar.gz ec2-user@ec2-34-210-13-156.us-west-2.compute.amazonaws.com:/home/ec2-user/maven.tar.gz
+
+=========================================
+
+How do I install maven?
+
+tar xzvf apache-maven-3.5.0-bin.tar.gz
+
+=========================================
+
+How do I install JDK?
+
+tar xzvf jdk-8u121-linux-x64.tar.gz
+
+=========================================
+
 How to remember git credentials?
 
 git config credential-helper store
