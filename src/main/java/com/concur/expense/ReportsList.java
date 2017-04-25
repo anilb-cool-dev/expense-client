@@ -3,9 +3,14 @@ package com.concur.expense;
 import java.util.*;
 import java.net.*;
 import java.io.*;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class ReportsList
 {
+    String FILE_NAME = "token";
+    String DEFAULT_REFRESH_TOKEN = "8eb09349-ae3c-4a8c-a9f9-71a1468f4ca5";
+
     public List getReportsList()
     {
         List l = new ArrayList();
@@ -28,17 +33,19 @@ public class ReportsList
     {
         String json = new String();
 
+        String token = getAuthToken();
+
         try
         {
             URL url = new URL("https://us.api.concursolutions.com/expensereports/v4/users/378D7F81-BEA3-4D88-9E40-05A8BDF7A8DF/context/TRAVELER/reports");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
-            conn.setRequestProperty("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjE0NTU2MTQwMjIifQ.eyJjb25jdXIuc2NvcGVzIjpbIlVTRVIiLCJwcm9maWxlIiwidXNlcl9yZWFkIl0sImF1ZCI6IioiLCJjb25jdXIuYXBwSWQiOiJlOTQzM2IzNi0xYjAxLTQ4MWEtOTM5MC1kM2NhNDY2ZDJmYzgiLCJzdWIiOiIzNzhkN2Y4MS1iZWEzLTRkODgtOWU0MC0wNWE4YmRmN2E4ZGYiLCJpc3MiOiJodHRwczovL3VzLmFwaS5jb25jdXJzb2x1dGlvbnMuY29tIiwiY29uY3VyLnByb2ZpbGUiOiJodHRwczovL3VzLmFwaS5jb25jdXJzb2x1dGlvbnMuY29tL3Byb2ZpbGUvdjEvcHJpbmNpcGFscy8zNzhkN2Y4MS1iZWEzLTRkODgtOWU0MC0wNWE4YmRmN2E4ZGYiLCJleHAiOjE0OTI5MjUyODYsImxlZ2FjeV9hcHBsaWNhdGlvbl9pZCI6ODI1NiwiY29uY3VyLnZlcnNpb24iOjIsImNvbmN1ci50eXBlIjoidXNlciIsImNvbmN1ci5hcHAiOiJodHRwczovL3VzLmFwaS5jb25jdXJzb2x1dGlvbnMuY29tL3Byb2ZpbGUvdjEvYXBwcy9lOTQzM2IzNi0xYjAxLTQ4MWEtOTM5MC1kM2NhNDY2ZDJmYzgiLCJuYmYiOjE0OTI5MjE2ODYsImlhdCI6MTQ5MjkyMTY4Nn0.rN8mG7iu0asnao6phds1jBLxhzVnm0tDwwdBHDnU6xmJSFZO1pSSuhYcM7TIAMfWZiJ4P1a17EScbYx0o3emx1Uv858kg2OW-EFGoL43gcQlQr9qVAd0tGlLhudnLq5Ap-tfj4HBGt94ikVMHCYiFO3-V27l5NKrKkRoQ2WQaMWn25eA7VHDMjFBsqzqXL2_oV3qDoxi4YGEF88CgFguEAeuPStYJDYuMwVBkSi1BBsAcCFdnSBS4p4pxzLA1h2bQsKoEcMYAht8J6C8IVYpfTGlklLm1f3XPX2y4DpPvPWA65FnwLczrJVbuZyNVQFM2U_MU0buQm57ZDLuJ89yiQ");
+            conn.setRequestProperty("Authorization", "Bearer " + token);
 
             if (conn.getResponseCode() != 200)
             {
-json = "Sorry";
+                json = "Sorry";
                 throw new RuntimeException("Failed : HTTP error code : "
                         + conn.getResponseCode());
             }
@@ -56,17 +63,111 @@ json = "Sorry";
         }
         catch (MalformedURLException e)
         {
-json = "Sorry1";
+            json = "Sorry1";
             e.printStackTrace();
         }
         catch (IOException e)
         {
-StringWriter errors = new StringWriter();
-e.printStackTrace(new PrintWriter(errors));
-json = errors.toString();
+            StringWriter errors = new StringWriter();
+            e.printStackTrace(new PrintWriter(errors));
+            json = errors.toString();
             e.printStackTrace();
         }
 
         return json;
+    }
+
+    private String getAuthToken()
+    {
+        String refresh_token;
+
+        try
+        {
+            refresh_token = getRefreshToken();
+
+            URL url = new URL("https://us.api.concursolutions.com/oauth2/v0/token?client_id=e9433b36-1b01-481a-9390-d3ca466d2fc8&client_secret=500c938c-baf4-4a3e-8ab6-724b673dd3f0&scope=USER%20profile%20user_read&grant_type=refresh_token&refresh_token=" + refresh_token);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Accept", "application/json");
+
+            if (conn.getResponseCode() == 200) {
+                AuthResponse ar = parseAuthResponse(conn.getInputStream());
+
+                if (!refresh_token.equals(ar.refresh_token))
+                {
+                    saveRefreshToken(ar.refresh_token);
+                }
+
+                return ar.access_token;
+            }
+        }
+        catch (Exception e)
+        {
+        }
+
+        return null;
+    }
+
+    private String getRefreshToken() throws Exception
+    {
+        String refresh_token;
+
+        try
+        {
+            BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME));
+            refresh_token = reader.readLine();
+            reader.close();
+        }
+        catch(Exception e)
+        {
+            refresh_token = DEFAULT_REFRESH_TOKEN;
+        }
+
+        if (refresh_token == null)
+        {
+            refresh_token = DEFAULT_REFRESH_TOKEN;
+        }
+
+        return refresh_token;
+    }
+
+    private AuthResponse parseAuthResponse(InputStream stream) throws Exception
+    {
+        AuthResponse ar = new AuthResponse();
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(stream));
+
+        String output;
+        String json = new String();
+
+        while ((output = br.readLine()) != null)
+        {
+            json = json.concat(output);
+        }
+
+        JSONObject obj = new JSONObject(json);
+        ar.access_token = (String)obj.get("access_token");
+        ar.refresh_token = (String)obj.get("refresh_token");
+
+        return ar;
+    }
+
+    private void saveRefreshToken(String token) throws Exception
+    {
+        File file = new File(FILE_NAME);
+
+        if (!file.exists())
+        {
+            // creates the file
+            file.createNewFile();
+        }
+
+        // creates a FileWriter Object
+        FileWriter writer = new FileWriter(file);
+
+        // Writes the content to the file
+        writer.write(token);
+        writer.flush();
+        writer.close();
     }
 }
