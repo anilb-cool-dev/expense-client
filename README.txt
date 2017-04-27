@@ -7,6 +7,12 @@ C:\>pscp -i "C:\Users\anilb\Desktop\Tech\AWS Keys\MyLinuxBuildEnv.ppk" c:\apache
 
 =========================================
 
+Download git for windows
+
+https://git-scm.com/download/win
+
+=========================================
+
 How do I install git?
 
 sudo yum install git
