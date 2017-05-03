@@ -2,6 +2,10 @@ machine:
   services:
     - docker
 
+general:
+    artifacts:
+        - "target/expense.war"
+
 dependencies:
   override:
     - docker info
