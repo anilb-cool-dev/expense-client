@@ -45,6 +45,18 @@ sudo yum remove tomcat7
 
 ===========================================
 
+How to install Jenkins?
+
+sudo su
+wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+rpm --import http://pkg.jenkins-ci.org/redhat-stable/jenkins-ci.org.key
+yum install jenkins
+service jenkins start
+chkconfig jenkins on
+
+Open your browser and navigate to http://<Elastic-IP>:8080. You will see jenkins dashboard
+============================================
+
 How to install docker?
 
 sudo yum install -y docker
