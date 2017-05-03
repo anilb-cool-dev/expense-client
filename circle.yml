@@ -1,0 +1,15 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build -t anilbhagwat/expense-client .
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e abhagwat@rocketmail.com -u anilbhagwat -p 123password
+      - docker push anilbhagwat/expense-client
