@@ -40,8 +40,12 @@ The creds are  stored in .git-credentials
 
 How to install and uninstall tomcat7?
 
+sudo yum install tomcat
 sudo yum install tomcat7-webapps tomcat7-docs-webapp tomcat7-admin-webapps
 sudo yum remove tomcat7
+
+Also see :
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-centos-7-via-yum
 
 ===========================================
 
