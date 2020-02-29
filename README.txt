@@ -13,6 +13,12 @@ https://git-scm.com/download/win
 
 =========================================
 
+How to reset credentials in git
+
+Go to Control Panel > User Accounts > Credential Manager > Windows Credentials. You will see Git credentials in the list
+
+=========================================
+
 How do I install git?
 
 sudo yum install git
