@@ -107,10 +107,11 @@ What should be in tomcat-users.xml?
 
 =========================================
 
-Where are environment variables persisted in?
+Environment variables
 
-/home/ec2-user/.bash_profile
+persisted in - /home/ec2-user/.bash_profile
 to print these variables use command printenv
+to set use export command. E.g. export JAVA_HOME=$HOME/jdk1.8.0_241
 
 =========================================
 
