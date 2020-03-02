@@ -110,6 +110,7 @@ What should be in tomcat-users.xml?
 Where are environment variables persisted in?
 
 /home/ec2-user/.bash_profile
+to print these variables use command printenv
 
 =========================================
 
