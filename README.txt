@@ -146,3 +146,10 @@ How do I check IP addr of my VM?
 /sbin/ifconfig
 
 =========================================
+
+How do I check if a process is running on a specific port?
+
+sudo yum install lsof
+lsof -i :8080
+
+==========================================
