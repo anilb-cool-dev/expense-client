@@ -153,3 +153,11 @@ sudo yum install lsof
 lsof -i :8080
 
 ==========================================
+
+Creating RDS MySQL
+
+On EC2 instance use <sudo yum install mysql>
+when creating RDS Mysql, create a default database
+After the RDS cluster is created, go to the security group. To the inbound rules add the security group of EC2 instance
+To connect from EC2 use, <mysql -h <cluster name> -u user -p <dbname>>
+
