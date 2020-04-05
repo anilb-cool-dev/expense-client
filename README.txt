@@ -79,6 +79,8 @@ What is the app URL?
 http://localhost:8080/expense/JSP/ReportsList.jsp
 http://localhost:8081/expense/expense
 
+Make sure inbound rule has Custom TCP, port 8080, 0.0.0.0/0 added
+
 ============================================
 
 where is the tomcat folder?
