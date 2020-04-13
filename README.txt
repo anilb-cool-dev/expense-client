@@ -5,6 +5,8 @@ How do I transfer a file from local windows to my linux instance in AWS?
 Use pscp that comes with putty.
 C:\>pscp -i "C:\Users\anilb\Desktop\Tech\AWS Keys\MyLinuxBuildEnv.ppk" c:\apache-maven-3.5.0-bin.tar.gz ec2-user@ec2-34-210-13-156.us-west-2.compute.amazonaws.com:/home/ec2-user/maven.tar.gz
 
+c:>pscp -i "c:\pem\mykeypair03012020.ppk" target\StockCharts-0.1.0.jar ec2-user@ec2-54-184-88-185.us-west-2.compute.amazonaws.com:/home/ec2-user/StockCharts-0.1.0.jar
+
 =========================================
 
 Download git for windows
