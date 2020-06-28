@@ -137,6 +137,9 @@ Dockerization
 
 A great resource is at http://trimc-devops.blogspot.com/2015/03/running-docker-applications-apache.html
 Basic useful commands
+
+$sudo service docker restart
+
 $docker build -t anilbhagwat/expense-client .
 $docker run -p 8080:8080 anilbhagwat/expense-client
 $docker login
