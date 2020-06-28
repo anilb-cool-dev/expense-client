@@ -143,6 +143,9 @@ $docker login
 $docker push anilbhagwat/expense-client
 $docker pull anilbhagwat/expense-client
 
+$aws configure
+$aws ecr get-login
+$docker login -u AWS -p <password> <url to ECR>
 =========================================
 
 How do I check IP addr of my VM?
