@@ -139,6 +139,7 @@ A great resource is at http://trimc-devops.blogspot.com/2015/03/running-docker-a
 Basic useful commands
 
 $sudo service docker restart
+$sudo usermod -a -G docker $USER
 
 $docker build -t anilbhagwat/expense-client .
 $docker run -p 8080:8080 anilbhagwat/expense-client
