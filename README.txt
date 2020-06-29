@@ -140,6 +140,7 @@ Basic useful commands
 
 $sudo service docker restart
 $sudo usermod -a -G docker $USER
+$exit
 
 $docker build -t anilbhagwat/expense-client .
 $docker run -p 8080:8080 anilbhagwat/expense-client
