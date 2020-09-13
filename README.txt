@@ -1,3 +1,8 @@
+How do I map public domain to AWS?
+
+Go to GoDaddy - open the domain and use public IP of AWS EC2 instance in A record
+Go to Route53 in AWS and in DNS management register the domain
+
 =========================================
 
 How do I transfer a file from local windows to my linux instance in AWS?
