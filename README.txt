@@ -156,6 +156,23 @@ $docker pull anilbhagwat/expense-client
 $aws configure
 $aws ecr get-login
 $docker login -u AWS -p <password> <url to ECR>
+
+sudo yum install -y docker
+
+sudo service docker restart
+
+docker build -t stockcharts:latest .
+
+aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 594359759417.dkr.ecr.us-west-2.amazonaws.com
+
+docker tag stockcharts:latest 594359759417.dkr.ecr.us-west-2.amazonaws.com/stockcharts:latest
+
+docker push 594359759417.dkr.ecr.us-west-2.amazonaws.com/stockcharts:latest
+
+docker run -p 8080:8080 594359759417.dkr.ecr.us-west-2.amazonaws.com/stockcharts:latest
+
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+
 =========================================
 
 How do I check IP addr of my VM?
