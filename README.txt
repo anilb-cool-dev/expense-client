@@ -195,3 +195,8 @@ when creating RDS Mysql, create a default database
 After the RDS cluster is created, go to the security group. To the inbound rules add the security group of EC2 instance
 To connect from EC2 use, <mysql -h <cluster name> -u user -p <dbname>>
 
+============================================
+
+AWS
+
+https://www.stratoscale.com/blog/cloud/vpc-for-dummies/
