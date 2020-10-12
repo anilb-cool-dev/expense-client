@@ -200,3 +200,4 @@ To connect from EC2 use, <mysql -h <cluster name> -u user -p <dbname>>
 AWS
 
 https://www.stratoscale.com/blog/cloud/vpc-for-dummies/
+https://medium.com/better-programming/turn-your-own-docker-image-into-an-auto-scaling-kubernetes-deployment-using-amazon-eks-bd2ab8ef56cc
