@@ -173,6 +173,8 @@ docker run -p 8080:8080 594359759417.dkr.ecr.us-west-2.amazonaws.com/stockcharts
 
 https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
 
+eksctl create cluster -n stockchartscluster -r us-west-2 -t t2.micro
+
 =========================================
 
 How do I check IP addr of my VM?
@@ -201,3 +203,6 @@ AWS
 
 https://www.stratoscale.com/blog/cloud/vpc-for-dummies/
 https://medium.com/better-programming/turn-your-own-docker-image-into-an-auto-scaling-kubernetes-deployment-using-amazon-eks-bd2ab8ef56cc
+https://learnk8s.io/troubleshooting-deployments#:~:text=Pods%20in%20a%20not%20Ready%20state&text=When%20the%20Readiness%20probe%20is,describe%20to%20identify%20the%20error.
+https://platform9.com/blog/kubernetes-enterprise-chapter-2-kubernetes-architecture-concepts/
+https://www.edureka.co/blog/amazon-eks/#DEMO
