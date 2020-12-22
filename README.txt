@@ -174,7 +174,7 @@ docker run -p 8080:8080 594359759417.dkr.ecr.us-west-2.amazonaws.com/stockcharts
 
 https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
 
-eksctl create cluster -n stockchartscluster -r us-west-2 -t t2.micro
+eksctl create cluster -n stockchartscluster -r us-west-2 -t t3.small
 
 =========================================
 
