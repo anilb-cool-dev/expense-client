@@ -207,3 +207,12 @@ https://medium.com/better-programming/turn-your-own-docker-image-into-an-auto-sc
 https://learnk8s.io/troubleshooting-deployments#:~:text=Pods%20in%20a%20not%20Ready%20state&text=When%20the%20Readiness%20probe%20is,describe%20to%20identify%20the%20error.
 https://platform9.com/blog/kubernetes-enterprise-chapter-2-kubernetes-architecture-concepts/
 https://www.edureka.co/blog/amazon-eks/#DEMO
+
+aws ec2 start-instances --instance-ids i-04c3655917ca73ef7 --region us-west-2
+aws rds start-db-instance --db-instance-identifier database-1
+
+aws ec2 stop-instances --instance-ids i-04c3655917ca73ef7 --region us-west-2
+aws rds stop-db-instance --db-instance-identifier database-1
+
+aws ec2 describe-instances --instance-ids i-04c3655917ca73ef7 --region us-west-2
+http://34.209.38.185:8080/
