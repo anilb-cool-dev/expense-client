@@ -3,6 +3,7 @@ How do I map public domain to AWS?
 Go to GoDaddy - open the domain and use public IP of AWS EC2 instance in A record
 Go to Route53 in AWS and in DNS management register the domain
 https://w3path.com/point-domain-to-aws-ec2-instance/
+Wait for 6 hours or so for taking effect
 
 =========================================
 
