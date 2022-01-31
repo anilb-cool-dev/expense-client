@@ -1,3 +1,5 @@
+Cheat sheet
+=================================================================================================
 How do I map public domain to AWS?
 
 Go to GoDaddy - open the domain and use public IP of AWS EC2 instance in A record
